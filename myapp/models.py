@@ -8,18 +8,21 @@ class Driver(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'ID: {self.pk}. {self.first_name} {self.last_name}'
+        return f'{self.pk}'
 
 
 class Vehicle(models.Model):
-    driver_id = models.ForeignKey('Driver', on_delete=models.PROTECT)
+    driver_id = models.ForeignKey('Driver', on_delete=models.PROTECT, null=True)
     make = models.CharField(max_length=50)
     model = models.CharField(max_length=50)
-    plate_number = models.CharField(max_length=15)
+    plate_number = models.CharField(max_length=15)  # TODO format???
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'Vehicle ID:{self.pk}.\n' \
-               f'Driver ID:{self.driver_id}.\n' \
-               f'{self.make}, {self.model}, number: {self.plate_number}'
+        return f'Vehicle ID:{self.pk}.'
+
+    def save(self, *args, **kwargs):
+        if ' ' not in self.plate_number:
+            self.plate_number = f'{self.plate_number[0:2]} {self.plate_number[2:6]} {self.plate_number[6:]}'
+        super(Vehicle, self).save(*args, **kwargs)
