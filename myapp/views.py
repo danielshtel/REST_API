@@ -1,13 +1,13 @@
 from datetime import datetime
 
-from rest_framework import generics
+from rest_framework.views import APIView
 from django.http import JsonResponse, HttpResponseBadRequest
 
 from .serializer import DriverSerializer
 from .models import Driver
 
 
-class DriverViewSet(generics.ListAPIView):
+class DriverViewSet(APIView):
     drivers_queryset = Driver.objects.all()
     serializer_class = DriverSerializer
     
