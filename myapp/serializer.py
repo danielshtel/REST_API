@@ -1,5 +1,6 @@
-from .models import Vehicle, Driver
 from rest_framework import serializers
+
+from .models import Vehicle, Driver
 
 
 class DriverSerializer(serializers.ModelSerializer):

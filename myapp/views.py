@@ -1,9 +1,8 @@
 import json
 from datetime import datetime
-from dataclasses import dataclass
+
 from django.http import JsonResponse, HttpResponseBadRequest
 from rest_framework import status
-from rest_framework.mixins import UpdateModelMixin
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
