@@ -12,10 +12,10 @@ class Driver(models.Model):
 
 
 class Vehicle(models.Model):
-    driver_id = models.ForeignKey('Driver', on_delete=models.PROTECT, null=True)
+    driver = models.ForeignKey('Driver', on_delete=models.PROTECT, null=True)
     make = models.CharField(max_length=50)
     model = models.CharField(max_length=50)
-    plate_number = models.CharField(max_length=15)  # TODO format???
+    plate_number = models.CharField(max_length=15)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
