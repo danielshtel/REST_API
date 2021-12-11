@@ -6,6 +6,8 @@ REST-API application for managing drivers and vehicles data.
 
 * <https://t.me/Daniel_Daniel97>
 * daniillevchenko98@gmail.com
+# Install
+[click](https://github.com/DaniilLevchenko/REST_API/blob/master/setup.md)
 
 # Drivers:
 
