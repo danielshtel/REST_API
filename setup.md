@@ -4,7 +4,7 @@ The first thing to do is to clone the repository:
 
 ```sh
 git clone https://github.com/DaniilLevchenko/REST_API.git
-cd restapi
+cd rest_api
 ```
 
 Create a virtual environment to install dependencies in and activate it:
