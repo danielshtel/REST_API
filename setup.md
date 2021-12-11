@@ -24,6 +24,5 @@ pip install -r requirements.txt
 
 Once pip has finished downloading the dependencies:
 ```sh
-cd restapi
 python manage.py runserver
 ```
