@@ -1,4 +1,4 @@
-# REST API for fleet of drivers.
+# REST API for drivers park.
 
 REST-API application for managing drivers and vehicles data.
 
@@ -9,7 +9,7 @@ REST-API application for managing drivers and vehicles data.
 
 # Drivers:
 
-## Get list of drivers
+## Get the list of drivers
 
 ### Request
 
@@ -167,7 +167,7 @@ Vary: Accept
 
 # Vehicles:
 
-## Get list of vehicles
+## Get the list of vehicles
 
 ### Request
 
