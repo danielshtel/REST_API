@@ -18,9 +18,7 @@ class DriverViewSet(ModelViewSet):
         created_at_lte = self.request.query_params.get('created_at__lte')
         if created_at_gte is not None:
             try:
-                self.queryset = self.queryset.filter(
-                    created_at__gte=datetime.strptime(created_at_gte, '%d-%m-%Y')
-                )
+                self.queryset = self.queryset.filter(created_at__gte=datetime.strptime(created_at_gte, '%d-%m-%Y'))
             except ValueError:
                 return HttpResponseBadRequest('Bad request')
         if created_at_lte is not None:
@@ -45,7 +43,10 @@ class DriverViewSet(ModelViewSet):
         return JsonResponse(drivers.data, safe=False)
 
     def create(self, request, *args, **kwargs):
-        return super(DriverViewSet, self).create(request, args, kwargs)
+        try:
+            return super(DriverViewSet, self).create(request, args, kwargs)
+        except Exception as e:
+            return HttpResponseBadRequest(f'Exception: {e}')
 
     def partial_update(self, request, *args, **kwargs):
         try:
