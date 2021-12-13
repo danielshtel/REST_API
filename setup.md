@@ -26,3 +26,9 @@ Once pip has finished downloading the dependencies:
 ```sh
 python manage.py runserver
 ```
+
+# Tests
+To run the tests use:
+```sh
+python manage.py test
+```
