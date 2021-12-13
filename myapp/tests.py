@@ -43,7 +43,7 @@ class DriverTests(APITestCase):
         self.assertEqual(response.json()['pk'], 3)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-    def test_delete(self):
+    def test_delete_driver(self):
         response = self.client.delete('/drivers/driver/1/')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Driver.objects.count(), 1)
@@ -103,7 +103,7 @@ class VehicleTests(APITestCase):
         self.assertEqual(response.json()['driver_id'], None)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_delete(self):
+    def test_delete_vehicle(self):
         response = self.client.delete('/vehicles/vehicle/1/')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Vehicle.objects.count(), 1)
