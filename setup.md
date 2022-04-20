@@ -3,7 +3,7 @@
 The first thing to do is to clone the repository:
 
 ```sh
-git clone https://github.com/DaniilLevchenko/REST_API.git
+git clone https://github.com/danielshtel/REST_API.git
 cd rest_api
 ```
 
